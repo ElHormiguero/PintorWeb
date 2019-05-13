@@ -6,5 +6,5 @@ Una placa de conexión wifi acoplada al microcontrolador crea una red local en l
 
 Basado en proyecto de IoT_lover. [Arduino - Drawing via Web Using Step Motor Controller](https://www.hackster.io/iot_lover/arduino-drawing-via-web-using-step-motor-controller-cb5f33#_=_)
 
-https://github.com/ElHormiguero/PintorWeb/blob/master/Imagenes/IMG_20190513_220616.jpg
-https://github.com/ElHormiguero/PintorWeb/blob/master/Imagenes/IMG_20190513_220626.jpg
+![](https://github.com/ElHormiguero/PintorWeb/blob/master/Imagenes/IMG_20190513_220616.jpg)
+![](https://github.com/ElHormiguero/PintorWeb/blob/master/Imagenes/IMG_20190513_220626.jpg)
