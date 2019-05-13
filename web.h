@@ -22,30 +22,6 @@ void sendPositionToWeb(long x, long y, byte state) {
   server.write(wbuf, data.length());
 }
 
-void xyCheckUpdateToWeb(long x, long y, byte state) {
-  static long preX = 0;
-  static long preY = 0;
-
-  //Variaciones de posicion
-  long deltaX = x - preX;
-  long deltaY = y - preY;
-
-  //Distancia mínima de resolucion
-  long dist = sqrt(pow(deltaX, 2) + pow(deltaY, 2));
-  boolean isUpdate = false;
-  if (dist > RESOLUTION)
-    isUpdate = true;
-
-  if (isUpdate == false || dist == 0)
-    return false;
-
-  //Envia la posicion
-  sendPositionToWeb(x, y, state);
-
-  preX = x;
-  preY = y;
-}
-
 boolean ReadWebData(long *xweb, long *yweb, byte *c) {
 
   // wait for a new client:

@@ -12,16 +12,16 @@
 
 //CONFIGURACION
 //Motor paso a paso
-#define Kvel 0.025f //Relacion diferencia de posicion - velocidad (control proporcional)
-#define aMax 10//Aceleracion máxima (no normalizada, depende del tiempo de muestreo)
-#define velMin 10 //Velocidad minima
+#define Kvel 0.021f //Relacion diferencia de posicion - velocidad (control proporcional)
+#define aMax 5//Aceleracion máxima (no normalizada, depende del tiempo de muestreo)
+#define velMin 15 //Velocidad minima
 #define angRot PI/4 //Rotacion de las coordenadas
 #define DIRECCION1 HIGH //Direccion del motor 1
 #define DIRECCION2 LOW  //Direccion del motor 2
 //Servomotor
 #define servoDown 0 //Angulo del servo en posicion de pintar
 #define servoUp 180  //Angulo del servo en posicion de no pintar
-#define timeservo 200 //ms de espera para bajar o subir el servo
+#define timeservo 80 //ms de espera para bajar o subir el servo
 
 //Timer
 #include <digitalWriteFast.h> //Más rapido!

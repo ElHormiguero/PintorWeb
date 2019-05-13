@@ -1,8 +1,8 @@
 /* Robot pintor web, control de un plotter en tiempo real desde un móvil o tablet. Plataforma de Arduino UNO.
- 
+
    Basado en proyecto de IoT_lover. Arduino - Drawing via Web Using Step Motor Controller
    https://www.hackster.io/iot_lover/arduino-drawing-via-web-using-step-motor-controller-cb5f33#_=_
-   
+
    Autor: Javier Vargas. El Hormiguero.
    https://creativecommons.org/licenses/by/4.0/
 */
@@ -16,9 +16,9 @@
 #define CMD_MOVE  2
 //Muestreo
 #define MuestreoMOT 10 //ms de muestreo para el control de motores
-#define MuestreoWEB 30 //ms de muestreo para la recepción de coordenadas web
+#define MuestreoWEB 50 //ms de muestreo para la recepción de coordenadas web
 //Coordenadas web
-#define xwebMax 54000 
+#define xwebMax 54000
 #define ywebMax 66000
 #define xwebMin -2500
 #define ywebMin -2100
@@ -89,7 +89,7 @@ void loop() {
             if (!MotorMoving()) break;
             delay(MuestreoMOT);
           }
-          xyCheckUpdateToWeb(x_web, y_web, penState);
+          sendPositionToWeb(x_web, y_web, penState);
           penDown();
           break;
 
@@ -100,17 +100,16 @@ void loop() {
             if (!MotorMoving()) break;
             delay(MuestreoMOT);
           }
-          xyCheckUpdateToWeb(x_web, y_web, penState);
+          sendPositionToWeb(x_web, y_web, penState);
           penUp();
           break;
 
         case CMD_MOVE:
+          //Devuelve la posicion recibida
+          sendPositionToWeb(x_web, y_web, penState);
           break;
       }
     }
-
-    //Devuelve la posicion recibida
-    xyCheckUpdateToWeb(x_web, y_web, penState);
   }
 
 }
